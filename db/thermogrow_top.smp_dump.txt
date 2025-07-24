@@ -1,0 +1,28 @@
+
+State Machine - |thermogrow_top|fsm_fan_control:fan_ctrl|state
+Name state.OFF state.ON state.WAIT 
+state.OFF 0 0 0 
+state.WAIT 1 0 1 
+state.ON 1 1 0 
+
+State Machine - |thermogrow_top|LCD1602_controller:lcd_ctrl|fsm_state
+Name fsm_state.WAIT_BEFORE_LOOP fsm_state.WR_HUM_FRAC_DEC fsm_state.WR_HUM_P fsm_state.WR_HUM_UNI fsm_state.WR_HUM_DEC fsm_state.WR_HUM_CENT fsm_state.SET_CURSOR_HUM fsm_state.WR_TEMP_FRAC_DEC fsm_state.WR_TEMP_FRAC_CENT fsm_state.WR_TEMP_P fsm_state.WR_TEMP_UNI fsm_state.WR_TEMP_DEC fsm_state.WR_TEMP_CENT fsm_state.SET_CURSOR_TEMP fsm_state.WR_STATIC_TEXT_2L fsm_state.CONFIG_CMD2 fsm_state.WR_STATIC_TEXT_1L fsm_state.CONFIG_CMD1 fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fsm_state.CONFIG_CMD1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+fsm_state.WR_STATIC_TEXT_1L 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+fsm_state.CONFIG_CMD2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+fsm_state.WR_STATIC_TEXT_2L 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+fsm_state.SET_CURSOR_TEMP 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+fsm_state.WR_TEMP_CENT 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+fsm_state.WR_TEMP_DEC 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+fsm_state.WR_TEMP_UNI 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+fsm_state.WR_TEMP_P 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_TEMP_FRAC_CENT 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_TEMP_FRAC_DEC 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.SET_CURSOR_HUM 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_HUM_CENT 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_HUM_DEC 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_HUM_UNI 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_HUM_P 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WR_HUM_FRAC_DEC 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state.WAIT_BEFORE_LOOP 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -15,7 +15,7 @@ module fsm_fan_control(
 
     // Lógica de transición de estado
     always @(posedge clk or posedge rst) begin
-        if (rst)
+        if (!rst)
             state <= OFF;
         else
             state <= next_state;
