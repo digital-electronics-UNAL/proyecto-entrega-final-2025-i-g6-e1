@@ -3,36 +3,36 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'LCD1602_controller:lcd_ctrl|clk_16ms'
-Slack : -26.128
-TNS   : -963.846
+Slack : -27.152
+TNS   : -981.105
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -5.599
-TNS   : -563.826
+Slack : -5.876
+TNS   : -516.670
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.433
+Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'LCD1602_controller:lcd_ctrl|clk_16ms'
-Slack : 0.454
+Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -234.972
+TNS   : -209.693
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'LCD1602_controller:lcd_ctrl|clk_16ms'
 Slack : -1.487
 TNS   : -127.882
 
 Type  : Slow 1200mV 0C Model Setup 'LCD1602_controller:lcd_ctrl|clk_16ms'
-Slack : -23.654
-TNS   : -873.196
+Slack : -24.709
+TNS   : -890.904
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -5.272
-TNS   : -522.637
+Slack : -5.476
+TNS   : -472.666
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.383
@@ -44,31 +44,31 @@ TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -234.972
+TNS   : -209.693
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'LCD1602_controller:lcd_ctrl|clk_16ms'
 Slack : -1.487
 TNS   : -127.882
 
 Type  : Fast 1200mV 0C Model Setup 'LCD1602_controller:lcd_ctrl|clk_16ms'
-Slack : -10.714
-TNS   : -370.133
+Slack : -11.008
+TNS   : -375.779
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.766
-TNS   : -157.878
+Slack : -1.898
+TNS   : -145.778
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.179
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'LCD1602_controller:lcd_ctrl|clk_16ms'
-Slack : 0.187
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -170.132
+TNS   : -151.431
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'LCD1602_controller:lcd_ctrl|clk_16ms'
 Slack : -1.000

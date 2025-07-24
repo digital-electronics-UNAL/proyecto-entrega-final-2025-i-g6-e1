@@ -2,7 +2,7 @@ module fsm_fan_control(
     input wire clk,
     input wire rst,
     input wire [7:0] temp,
-    input wire valid,
+    //input wire valid,
     output reg fan_enable
 );
 
@@ -25,25 +25,26 @@ module fsm_fan_control(
     always @(*) begin
         case (state)
             OFF: begin
-                if (valid && temp > 8'd20)
+                if (temp > 8'd25)
                     next_state = ON;
-                else if (valid && temp >= 8'd15)
+                else if ( temp >= 8'd24)
                     next_state = WAIT;
                 else
                     next_state = OFF;
             end
             WAIT: begin
-                if (valid && temp > 8'd20)
+                if ( temp > 8'd25)
                     next_state = ON;
-                else if (valid && temp < 8'd15)
+                else if (temp < 8'd24)
                     next_state = OFF;
                 else
                     next_state = WAIT;
             end
             ON: begin
-                if (valid && temp < 8'd15)
+                if (temp < 8'd24)
                     next_state = OFF;
-                else if (valid && temp <= 8'd20)
+                else if(temp <= 8'd25)
+
                     next_state = WAIT;
                 else
                     next_state = ON;

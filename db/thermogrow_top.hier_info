@@ -594,10 +594,7 @@ temp[7] => LessThan0.IN9
 temp[7] => LessThan1.IN9
 temp[7] => LessThan2.IN9
 temp[7] => LessThan3.IN9
-valid => always1.IN1
-valid => always1.IN1
-valid => always1.IN1
-valid => always1.IN1
+valid => ~NO_FANOUT~
 fan_enable <= fan_enable.DB_MAX_OUTPUT_PORT_TYPE
 
 

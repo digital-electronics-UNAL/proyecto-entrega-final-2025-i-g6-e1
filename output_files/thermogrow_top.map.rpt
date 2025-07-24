@@ -1,5 +1,5 @@
 Analysis & Synthesis report for thermogrow_top
-Wed Jul 23 18:59:04 2025
+Thu Jul 24 14:05:33 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -35,10 +35,11 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  27. Parameter Settings for Inferred Entity Instance: LCD1602_controller:lcd_ctrl|lpm_divide:Mod2
  28. Parameter Settings for Inferred Entity Instance: LCD1602_controller:lcd_ctrl|lpm_divide:Mod3
  29. Parameter Settings for Inferred Entity Instance: LCD1602_controller:lcd_ctrl|lpm_divide:Mod0
- 30. Port Connectivity Checks: "dht11_sensor:dht11_inst"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
+ 30. Port Connectivity Checks: "fsm_fan_control:fan_ctrl"
+ 31. Port Connectivity Checks: "dht11_sensor:dht11_inst"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -65,15 +66,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 23 18:59:04 2025           ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 24 14:05:33 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; thermogrow_top                                  ;
 ; Top-level Entity Name              ; thermogrow_top                                  ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 1,369                                           ;
-;     Total combinational functions  ; 1,363                                           ;
-;     Dedicated logic registers      ; 242                                             ;
-; Total registers                    ; 242                                             ;
+; Total logic elements               ; 1,346                                           ;
+;     Total combinational functions  ; 1,340                                           ;
+;     Dedicated logic registers      ; 225                                             ;
+; Total registers                    ; 225                                             ;
 ; Total pins                         ; 19                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -221,20 +222,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,369       ;
+; Estimated Total logic elements              ; 1,346       ;
 ;                                             ;             ;
-; Total combinational functions               ; 1363        ;
+; Total combinational functions               ; 1340        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 278         ;
-;     -- 3 input functions                    ; 356         ;
-;     -- <=2 input functions                  ; 729         ;
+;     -- 4 input functions                    ; 273         ;
+;     -- 3 input functions                    ; 340         ;
+;     -- <=2 input functions                  ; 727         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 934         ;
-;     -- arithmetic mode                      ; 429         ;
+;     -- normal mode                          ; 928         ;
+;     -- arithmetic mode                      ; 412         ;
 ;                                             ;             ;
-; Total registers                             ; 242         ;
-;     -- Dedicated logic registers            ; 242         ;
+; Total registers                             ; 225         ;
+;     -- Dedicated logic registers            ; 225         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 19          ;
@@ -242,9 +243,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; rst_n~input ;
-; Maximum fan-out                             ; 180         ;
-; Total fan-out                               ; 4217        ;
-; Average fan-out                             ; 2.56        ;
+; Maximum fan-out                             ; 163         ;
+; Total fan-out                               ; 4087        ;
+; Average fan-out                             ; 2.54        ;
 +---------------------------------------------+-------------+
 
 
@@ -253,12 +254,12 @@ on the Quartus Prime software download page.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |thermogrow_top                           ; 1363 (0)            ; 242 (0)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |thermogrow_top                                                                                                                             ; thermogrow_top      ; work         ;
-;    |LCD1602_controller:lcd_ctrl|          ; 1157 (278)          ; 107 (107)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl                                                                                                 ; LCD1602_controller  ; work         ;
-;       |lpm_divide:Div0|                   ; 95 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_3jm:auto_generated|  ; 95 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated                                                   ; lpm_divide_3jm      ; work         ;
-;             |sign_div_unsign_rlh:divider| ; 95 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider                       ; sign_div_unsign_rlh ; work         ;
-;                |alt_u_div_a7f:divider|    ; 95 (95)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider ; alt_u_div_a7f       ; work         ;
+; |thermogrow_top                           ; 1340 (0)            ; 225 (0)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |thermogrow_top                                                                                                                             ; thermogrow_top      ; work         ;
+;    |LCD1602_controller:lcd_ctrl|          ; 1171 (279)          ; 107 (107)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl                                                                                                 ; LCD1602_controller  ; work         ;
+;       |lpm_divide:Div0|                   ; 104 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_3jm:auto_generated|  ; 104 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated                                                   ; lpm_divide_3jm      ; work         ;
+;             |sign_div_unsign_rlh:divider| ; 104 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider                       ; sign_div_unsign_rlh ; work         ;
+;                |alt_u_div_a7f:divider|    ; 104 (104)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider ; alt_u_div_a7f       ; work         ;
 ;       |lpm_divide:Div1|                   ; 52 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_0jm:auto_generated|  ; 52 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div1|lpm_divide_0jm:auto_generated                                                   ; lpm_divide_0jm      ; work         ;
 ;             |sign_div_unsign_olh:divider| ; 52 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div1|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
@@ -283,10 +284,10 @@ on the Quartus Prime software download page.
 ;          |lpm_divide_0jm:auto_generated|  ; 52 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div6|lpm_divide_0jm:auto_generated                                                   ; lpm_divide_0jm      ; work         ;
 ;             |sign_div_unsign_olh:divider| ; 52 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div6|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
 ;                |alt_u_div_47f:divider|    ; 52 (52)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Div6|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
-;       |lpm_divide:Mod0|                   ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_p9m:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0|lpm_divide_p9m:auto_generated                                                   ; lpm_divide_p9m      ; work         ;
-;             |sign_div_unsign_ekh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
-;                |alt_u_div_g4f:divider|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ; alt_u_div_g4f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 34 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_p9m:auto_generated|  ; 34 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0|lpm_divide_p9m:auto_generated                                                   ; lpm_divide_p9m      ; work         ;
+;             |sign_div_unsign_ekh:divider| ; 34 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
+;                |alt_u_div_g4f:divider|    ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ; alt_u_div_g4f       ; work         ;
 ;       |lpm_divide:Mod1|                   ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_m9m:auto_generated|  ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod1|lpm_divide_m9m:auto_generated                                                   ; lpm_divide_m9m      ; work         ;
 ;             |sign_div_unsign_bkh:divider| ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
@@ -315,8 +316,8 @@ on the Quartus Prime software download page.
 ;          |lpm_divide_m9m:auto_generated|  ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod7|lpm_divide_m9m:auto_generated                                                   ; lpm_divide_m9m      ; work         ;
 ;             |sign_div_unsign_bkh:divider| ; 59 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod7|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
 ;                |alt_u_div_a4f:divider|    ; 59 (59)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|LCD1602_controller:lcd_ctrl|lpm_divide:Mod7|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f       ; work         ;
-;    |dht11_sensor:dht11_inst|              ; 203 (203)           ; 134 (134)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|dht11_sensor:dht11_inst                                                                                                     ; dht11_sensor        ; work         ;
-;    |fsm_fan_control:fan_ctrl|             ; 3 (3)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|fsm_fan_control:fan_ctrl                                                                                                    ; fsm_fan_control     ; work         ;
+;    |dht11_sensor:dht11_inst|              ; 167 (167)           ; 117 (117)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|dht11_sensor:dht11_inst                                                                                                     ; dht11_sensor        ; work         ;
+;    |fsm_fan_control:fan_ctrl|             ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |thermogrow_top|fsm_fan_control:fan_ctrl                                                                                                    ; fsm_fan_control     ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -369,13 +370,13 @@ Encoding Type:  One-Hot
 ; LCD1602_controller:lcd_ctrl|rw                ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|hum_uni[4..7]     ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_uni[4..7]    ; Stuck at GND due to stuck port data_in ;
+; fsm_fan_control:fan_ctrl|state.OFF            ; Lost fanout                            ;
+; fsm_fan_control:fan_ctrl|state.WAIT           ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|fsm_state~2       ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|fsm_state~3       ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|fsm_state~4       ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|fsm_state~5       ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|fsm_state~6       ; Lost fanout                            ;
-; fsm_fan_control:fan_ctrl|state.WAIT           ; Lost fanout                            ;
-; fsm_fan_control:fan_ctrl|state.OFF            ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|hum_cent[7]       ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_cent[7]      ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|hum_frac_dec[6]   ; Stuck at GND due to stuck port data_in ;
@@ -383,6 +384,8 @@ Encoding Type:  One-Hot
 ; LCD1602_controller:lcd_ctrl|temp_frac_dec[6]  ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_dec[6]       ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_frac_cent[7] ; Stuck at GND due to stuck port data_in ;
+; dht11_sensor:dht11_inst|hum2[0]               ; Lost fanout                            ;
+; dht11_sensor:dht11_inst|temp2[0]              ; Lost fanout                            ;
 ; LCD1602_controller:lcd_ctrl|hum_cent[6]       ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_cent[6]      ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|hum_frac_dec[5]   ; Stuck at GND due to stuck port data_in ;
@@ -390,7 +393,7 @@ Encoding Type:  One-Hot
 ; LCD1602_controller:lcd_ctrl|temp_frac_dec[5]  ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_dec[5]       ; Stuck at GND due to stuck port data_in ;
 ; LCD1602_controller:lcd_ctrl|temp_frac_cent[6] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 30        ;                                        ;
+; Total Number of Removed Registers = 32        ;                                        ;
 +-----------------------------------------------+----------------------------------------+
 
 
@@ -399,12 +402,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 242   ;
-; Number of registers using Synchronous Clear  ; 62    ;
+; Total registers                              ; 225   ;
+; Number of registers using Synchronous Clear  ; 54    ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 181   ;
+; Number of registers using Clock Enable       ; 165   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -426,11 +429,11 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 46 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|temp1[2]            ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |thermogrow_top|LCD1602_controller:lcd_ctrl|data_counter[4] ;
-; 10:1               ; 45 bits   ; 270 LEs       ; 45 LEs               ; 225 LEs                ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|shift_reg[15]       ;
-; 14:1               ; 32 bits   ; 288 LEs       ; 32 LEs               ; 256 LEs                ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|timer[13]           ;
-; 14:1               ; 3 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|state[1]            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|temp1[7]            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |thermogrow_top|LCD1602_controller:lcd_ctrl|data_counter[0] ;
+; 10:1               ; 45 bits   ; 270 LEs       ; 45 LEs               ; 225 LEs                ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|shift_reg[12]       ;
+; 14:1               ; 32 bits   ; 288 LEs       ; 32 LEs               ; 256 LEs                ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|timer[12]           ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; Yes        ; |thermogrow_top|dht11_sensor:dht11_inst|state[2]            ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |thermogrow_top|LCD1602_controller:lcd_ctrl|data[1]         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
@@ -794,11 +797,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fsm_fan_control:fan_ctrl"                                                                                                                    ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; valid ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "dht11_sensor:dht11_inst"                                                                                  ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                                                  ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
 ; state ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
@@ -809,28 +822,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 19                          ;
-; cycloneiii_ff         ; 242                         ;
+; cycloneiii_ff         ; 225                         ;
 ;     CLR               ; 1                           ;
-;     ENA               ; 129                         ;
-;     ENA SCLR          ; 52                          ;
-;     SCLR              ; 10                          ;
+;     ENA               ; 120                         ;
+;     ENA SCLR          ; 45                          ;
+;     SCLR              ; 9                           ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 49                          ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 1367                        ;
-;     arith             ; 429                         ;
+; cycloneiii_lcell_comb ; 1344                        ;
+;     arith             ; 412                         ;
 ;         1 data inputs ; 7                           ;
 ;         2 data inputs ; 133                         ;
-;         3 data inputs ; 289                         ;
-;     normal            ; 938                         ;
+;         3 data inputs ; 272                         ;
+;     normal            ; 932                         ;
 ;         0 data inputs ; 74                          ;
 ;         1 data inputs ; 39                          ;
-;         2 data inputs ; 480                         ;
-;         3 data inputs ; 67                          ;
-;         4 data inputs ; 278                         ;
+;         2 data inputs ; 478                         ;
+;         3 data inputs ; 68                          ;
+;         4 data inputs ; 273                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 24.30                       ;
-; Average LUT depth     ; 15.89                       ;
+; Average LUT depth     ; 16.45                       ;
 +-----------------------+-----------------------------+
 
 
@@ -849,7 +862,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Jul 23 18:58:45 2025
+    Info: Processing started: Thu Jul 24 14:05:18 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off thermogrow_top -c thermogrow_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -887,7 +900,7 @@ Warning (10030): Net "config_mem.data_a" at lcd1602_controller.v(63) has no driv
 Warning (10030): Net "config_mem.waddr_a" at lcd1602_controller.v(63) has no driver or initial value, using a default initial value '0' File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/lcd1602_controller.v Line: 63
 Warning (10030): Net "static_data_mem.we_a" at lcd1602_controller.v(62) has no driver or initial value, using a default initial value '0' File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/lcd1602_controller.v Line: 62
 Warning (10030): Net "config_mem.we_a" at lcd1602_controller.v(63) has no driver or initial value, using a default initial value '0' File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/lcd1602_controller.v Line: 63
-Info (12128): Elaborating entity "fsm_fan_control" for hierarchy "fsm_fan_control:fan_ctrl" File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/thermogrow_top.v Line: 59
+Info (12128): Elaborating entity "fsm_fan_control" for hierarchy "fsm_fan_control:fan_ctrl" File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/thermogrow_top.v Line: 58
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276004): RAM logic "LCD1602_controller:lcd_ctrl|static_data_mem" is uninferred due to inappropriate RAM size File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/lcd1602_controller.v Line: 62
     Info (276004): RAM logic "LCD1602_controller:lcd_ctrl|config_mem" is uninferred due to inappropriate RAM size File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/lcd1602_controller.v Line: 63
@@ -959,26 +972,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_ekh File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/sign_div_unsign_ekh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
     Info (12023): Found entity 1: alt_u_div_g4f File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/alt_u_div_g4f.tdf Line: 27
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rw" is stuck at GND File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/thermogrow_top.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "LCD1602_controller:lcd_ctrl|lpm_divide:Div2|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider|add_sub_26_result_int[1]~14" File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/alt_u_div_a7f.tdf Line: 122
     Info (17048): Logic cell "LCD1602_controller:lcd_ctrl|lpm_divide:Div0|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider|add_sub_26_result_int[1]~14" File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/alt_u_div_a7f.tdf Line: 122
     Info (17048): Logic cell "LCD1602_controller:lcd_ctrl|lpm_divide:Div4|lpm_divide_3jm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider|add_sub_26_result_int[1]~14" File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/alt_u_div_a7f.tdf Line: 122
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1401 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1378 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 15 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 1382 logic cells
+    Info (21061): Implemented 1359 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 405 megabytes
-    Info: Processing ended: Wed Jul 23 18:59:04 2025
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Processing ended: Thu Jul 24 14:05:33 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:33
 
 

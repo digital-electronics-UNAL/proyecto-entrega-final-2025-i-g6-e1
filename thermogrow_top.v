@@ -54,7 +54,6 @@ module thermogrow_top (
         .clk(clk),
         .rst(~rst_n),
         .temp(temperature_int),
-        .valid(valid_data),
         .fan_enable(fan_enable)
     );
 

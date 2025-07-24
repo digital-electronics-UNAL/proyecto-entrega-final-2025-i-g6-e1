@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Jul 23 18:59:04 2025
+Analysis & Synthesis Status : Successful - Thu Jul 24 14:05:33 2025
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : thermogrow_top
 Top-level Entity Name : thermogrow_top
 Family : Cyclone IV E
-Total logic elements : 1,369
-    Total combinational functions : 1,363
-    Dedicated logic registers : 242
-Total registers : 242
+Total logic elements : 1,346
+    Total combinational functions : 1,340
+    Dedicated logic registers : 225
+Total registers : 225
 Total pins : 19
 Total virtual pins : 0
 Total memory bits : 0
