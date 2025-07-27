@@ -69,11 +69,45 @@ Se diseñaron y simularon las máquinas de estados en Verilog. Las pruebas lógi
 - Desactivación de `fan_enable` cuando `temp < 15`
 - Secuencia correcta de instrucciones a la LCD en respuesta al sensor
 
+Se adjunta una imagen de la simulación que también se puede ejecutar en el archivo del repositorio nombrado testbench_thermogrow.v
+![SimulacionFanControl](simulación_fan_control.jpeg)
 
+Aquí se muestra el cambio entre estados ON y OFF para los ventiladores según se alcanza el umbral determinado. Como objetivo presentado durante la documentación del proyecto, establecimos que ese umbral debía ser entre 15°C a 20°C. Una vez logramos este comportamiento en simulación, se hizo necesario durante la implementación, añadir un estado intermedio llamado WAIT donde los ventiladores permanecen apagados mientras se encuentran en el umbral, decidimos esto para evitar errores en los valores límite del umbral y que no se indeterminara el comportamiento que debía tener. 
+
+La simulación del testbench que se encuentra en el archivo dht11_tb.v, arrojó los siguientes resultados:
+![simulaciónDHT11](dht11_simulacion.png)
+
+Esta simulación muestra la transición entre estados IDLE y READ_BIT en la lectura de datos del sensor. Aquí se detectan flancos de bajada en la línea de datos y se almacenan los 40 bits que nos sirven para la interpretación de los datos en la pantalla LCD. 
+
+Es necesario recordar esta distribución: 
+![distribucióndebytes](bitsht11.png)
+Donde se divide claramente en 5 bytes que cada uno representa un dato de temperatura y humedad respectivamente. 
+
+El comportamiento se podría resumir en el siguiente diagrama: 
+![diagramadht11](diagrama_simulaciondht11.png)
+Con esta simulación pudimos pasar con éxito a la implementación en FPGA, dado que logramos ver una consistencia en el modo de recepción de datos cuando el sensor responde. 
+Vimos como se capturaban los 40 bits en cada lectura. También se puede ver cómo checksum ayuda a validar los datos, sin embargo, en la implementación no encontramos con un problema que nos evitó el correcto manejo del checksum.
 
 ## 7. Implementación
+El gran desafío del proyecto fue hacer funcionar el sensor de temperatura DHT11. La implementación del protocolo one-wire constituyó el núcleo fundamental de este proyecto. Este protocolo presenta desafíos únicos por su naturaleza bidireccional en un solo cable, donde la sincronización temporal es crítica para la comunicación exitosa con el sensor DHT11. Al hacer la comunicación en un único pin definido como in-out se hace necesario tener una temporización precisa para capturar los 40 bits de lectura correctamente. 
+El siguiente diagrama representa la lógica de transición de estados del sensor:
+![transicion de estados](transiciondeestadosdht11.png)
+El descubrimiento de cómo el lector recibía 41 bits en vez de 40 como se esperaba nos llevó a hacer un experimento con el analizador de pulsos. Estos fueron los datos extraídos con ayuda de un Arduino ONE.
+### Pulseview Arduino:
+![pulseview arduino](pulseview_arduino.png)
+### Pulseview FPGA:
+![pulseview fpga](pulseview_fpga.png)
 
-El sistema se montó en una caja de cartón reforzada con palos de balso. Los cuatro ventiladores se conectaron en paralelo y controlados por un único relé. La alimentación se realizó con una fuente de 12 V DC, y se integraron todos los módulos en protoboard.
+Este fue el gran punto de quiebre del proyecto que nos permitió escoger el correcto orden de bits que proporcionaba la lectura del sensor. Teoŕicamente, esperabamos unos registros de la forma cómo se mostró en el gráfico. Sin embargo, se hizo necesario un desplazamiento de bits de la siguiente manera: hum1 <= shift_reg[38:31];
+                    hum2 <= shift_reg[30:23];
+                    temp1 <= shift_reg[22:15];
+                    temp2 <= shift_reg[14:7];
+                    checksum <= shift_reg[6:0]
+
+Así conseguimos una lectura fiable, con el costo de perder un bit para el checksum, lo cual podría llevar a mostrar lecturas erróneas y reconocemos que es un aspecto a mejorar en cuanto al código del proyecto. Una posibilidad sería la supresión de ese bit extra que nos generaba confusión, con una manera de aislarlo se podría generar un estado de arranque que ignore ese primer bit y no se tenga que desplazar a costa de perder información de los bits de checksum.
+Una vez esto se pudo lograr, el módulo de la pantalla LCD, tomó más líneas de código y más estados porque también se logró tener la lectura de humedad, lo cual es un añadido importante que no habíamos contemplado al inicio del proyecto. En resumen, aquí fue donde más conceptos de las prácticas de laboratorio pudimos aplicar como la división de cifras por centenas, decenas, unidades, el funcionamiento de la pantalla LCD, el divisor de frecuencia para una visualización confiable de los datos, entre otros.
+Para mayor robustez y lograr el objetivo del proyecto se implementó una máquina de estados para el control del ventilador que se encuentra en 'fsm_fan_control.v', que pasa entre los estados ON, WAIT y OFF, como se explicó anteriormente. Los rangos fueron modificados para acelerar la sustentación del proyecto de 23°C a 25°C. Esto se puede cambiar fácilmente en módulo de fsm_fan_control.v.    
+El sistema se montó en una caja de cartón reforzada con palos de balso. Los cuatro ventiladores se conectaron en paralelo y controlados por un único relé. La alimentación se realizó con una fuente de 12 V DC, y se integraron todos los módulos en la FPGA por medio de un módulo top para un mayor orden. Con ayuda de la protoboard se realizó la conexión del sensor con la FPGA y también con el relé para seguridad de la FPGA y de todos los componentes.
 
 ### Pruebas realizadas:
 
@@ -82,7 +116,7 @@ El sistema se montó en una caja de cartón reforzada con palos de balso. Los cu
 3. Se retiró la fuente de calor → los ventiladores se apagaron al bajar la temperatura.
 
 Estas pruebas confirmaron el correcto funcionamiento del sistema de control.
-### video de la implementacion
+### Video de la implementacion
 [circuito implementado](imp.MP4)
 
 ## 8. Resumen
