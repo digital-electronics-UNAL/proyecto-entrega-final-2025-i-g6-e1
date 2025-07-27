@@ -1,5 +1,5 @@
 Analysis & Synthesis report for thermogrow_top
-Thu Jul 24 14:05:33 2025
+Fri Jul 25 10:44:19 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -35,11 +35,10 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  27. Parameter Settings for Inferred Entity Instance: LCD1602_controller:lcd_ctrl|lpm_divide:Mod2
  28. Parameter Settings for Inferred Entity Instance: LCD1602_controller:lcd_ctrl|lpm_divide:Mod3
  29. Parameter Settings for Inferred Entity Instance: LCD1602_controller:lcd_ctrl|lpm_divide:Mod0
- 30. Port Connectivity Checks: "fsm_fan_control:fan_ctrl"
- 31. Port Connectivity Checks: "dht11_sensor:dht11_inst"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
+ 30. Port Connectivity Checks: "dht11_sensor:dht11_inst"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -66,7 +65,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 24 14:05:33 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 25 10:44:19 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; thermogrow_top                                  ;
 ; Top-level Entity Name              ; thermogrow_top                                  ;
@@ -797,15 +796,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fsm_fan_control:fan_ctrl"                                                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; valid ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +--------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "dht11_sensor:dht11_inst"                                                                                  ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -862,7 +852,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Jul 24 14:05:18 2025
+    Info: Processing started: Fri Jul 25 10:44:02 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off thermogrow_top -c thermogrow_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -972,7 +962,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_ekh File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/sign_div_unsign_ekh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
     Info (12023): Found entity 1: alt_u_div_g4f File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/db/alt_u_div_g4f.tdf Line: 27
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rw" is stuck at GND File: /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/thermogrow_top.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
@@ -989,9 +979,9 @@ Info (21057): Implemented 1378 device resources after synthesis - the final reso
     Info (21060): Implemented 1 bidirectional pins
     Info (21061): Implemented 1359 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 405 megabytes
-    Info: Processing ended: Thu Jul 24 14:05:33 2025
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 390 megabytes
+    Info: Processing ended: Fri Jul 25 10:44:19 2025
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:36
 
 

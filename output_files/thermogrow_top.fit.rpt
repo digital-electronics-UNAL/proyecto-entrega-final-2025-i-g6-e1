@@ -1,5 +1,5 @@
 Fitter report for thermogrow_top
-Thu Jul 24 14:05:46 2025
+Fri Jul 25 10:44:33 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -69,7 +69,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jul 24 14:05:46 2025           ;
+; Fitter Status                      ; Successful - Fri Jul 25 10:44:33 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; thermogrow_top                                  ;
 ; Top-level Entity Name              ; thermogrow_top                                  ;
@@ -1098,7 +1098,7 @@ Info (176353): Automatically promoted node LCD1602_controller:lcd_ctrl|clk_16ms 
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
@@ -1111,7 +1111,7 @@ Info (170195): Router estimated average interconnect usage is 2% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.87 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.89 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1119,10 +1119,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file /home/rustam/github-classroom/digital-electronics-UNAL/proyecto-entrega-final-2025-i-g6-e1/output_files/thermogrow_top.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 672 megabytes
-    Info: Processing ended: Thu Jul 24 14:05:47 2025
+    Info: Peak virtual memory: 668 megabytes
+    Info: Processing ended: Fri Jul 25 10:44:34 2025
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+

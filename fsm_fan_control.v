@@ -27,7 +27,7 @@ module fsm_fan_control(
             OFF: begin
                 if (temp > 8'd25)
                     next_state = ON;
-                else if ( temp >= 8'd24)
+                else if ( temp >= 8'd23)
                     next_state = WAIT;
                 else
                     next_state = OFF;
@@ -35,13 +35,13 @@ module fsm_fan_control(
             WAIT: begin
                 if ( temp > 8'd25)
                     next_state = ON;
-                else if (temp < 8'd24)
+                else if (temp < 8'd23)
                     next_state = OFF;
                 else
                     next_state = WAIT;
             end
             ON: begin
-                if (temp < 8'd24)
+                if (temp < 8'd23)
                     next_state = OFF;
                 else if(temp <= 8'd25)
 
