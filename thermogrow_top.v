@@ -1,6 +1,7 @@
-//`timescale 1ns / 1ps
-//`include "dht11_sensor.v"
-//`include "lcd1602_controller.v"
+`timescale 1ns / 1ps
+`include "dht11_sensor.v"
+`include "lcd1602_controller.v"
+`include "fsm_fan_control.v" 
 module thermogrow_top (
     input wire clk,              // Reloj de 50 MHz
     input wire rst_n,            // Reset activo en bajo
